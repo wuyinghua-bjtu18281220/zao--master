@@ -1,6 +1,6 @@
 #!/usr/bin python3
 """ Face Filterer for extraction in faceswap.py """
-
+"""faceswap.py 中的 用于提取的面部过滤器"""
 import logging
 
 from lib.faces_detect import DetectedFace
@@ -18,8 +18,8 @@ def avg(arr):
 
 
 class FaceFilter():
-    """ Face filter for extraction
-        NB: we take only first face, so the reference file should only contain one face. """
+    """ Face filter for extraction用于提取的面部过滤器
+        NB: we take only first face, so the reference file should only contain one face. 我们只取第一个面，所以引用文件应该只包含一个面"""
 
     def __init__(self, reference_file_paths, nreference_file_paths, detector, aligner, loglevel,
                  multiprocess=False, threshold=0.4):
@@ -48,9 +48,9 @@ class FaceFilter():
         logger.debug("Loaded filter images: %s", {k: v["type"] for k, v in retval.items()})
         return retval
 
-    # Extraction pipeline
+    # Extraction pipeline提取路线
     def align_faces(self, detector_name, aligner_name, loglevel, multiprocess):
-        """ Use the requested detectors to retrieve landmarks for filter images """
+        """ Use the requested detectors to retrieve landmarks for filter images 使用请求的检测器检索用于筛选图像的地标"""
         extractor = Extractor(detector_name, aligner_name, loglevel, multiprocess=multiprocess)
         self.run_extractor(extractor)
         del extractor

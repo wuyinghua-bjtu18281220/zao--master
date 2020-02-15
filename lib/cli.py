@@ -22,10 +22,8 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 
 class ScriptExecutor():
-    """ Loads the relevant script modules and executes the script.
-        This class is initialised in each of the argparsers for the relevant
-        command, then execute script is called within their set_default
-        function. """
+    """ 加载相关的脚本模块并执行脚本
+        这个类在每个argparser中初始化命令，然后在其设置的默认值内调用execute脚本功能。 """
 
     def __init__(self, command, subparsers=None):
         self.command = command.lower()

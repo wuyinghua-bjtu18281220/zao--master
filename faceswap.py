@@ -11,14 +11,14 @@ if sys.version_info[0] == 3 and sys.version_info[1] < 2:
 
 
 def bad_args(args):
-    """ Print help on bad arguments """     #acbb
+    """ Print help on bad arguments """
     PARSER.print_help()
     exit(0)
 
 
 if __name__ == "__main__":
-    PARSER = cli.FullHelpArgumentParser()
-    SUBPARSER = PARSER.add_subparsers()
+    PARSER = cli.FullHelpArgumentParser()   #parser 分析器
+    SUBPARSER = PARSER.add_subparsers()     #subparser 子分析器
     EXTRACT = cli.ExtractArgs(SUBPARSER,
                               "extract",
                               "Extract the faces from pictures")
