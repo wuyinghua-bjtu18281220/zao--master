@@ -11,7 +11,7 @@ if sys.version_info[0] == 3 and sys.version_info[1] < 2:
 
 
 def bad_args(args):
-    """ Print help on bad arguments """
+    """ Print help on bad arguments """     #acbb
     PARSER.print_help()
     exit(0)
 
